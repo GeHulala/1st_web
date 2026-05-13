@@ -66,21 +66,21 @@ systemctl start nginx
 systemctl status nginx    # 看到 active (running) 就 OK
 ```
 
-### 3. 克隆网站代码
+### 3. 克隆网站代码（已放在 /workspace 下了）
 
+如果你还没有 Nginx，先安装：
 ```bash
-cd /var/www
-git clone https://github.com/GeHulala/1st_web.git
+apt update && apt install nginx -y && systemctl start nginx
 ```
 
-### 4. 配置 Nginx 站点
+### 4. 配置 Nginx 站点（指向 /workspace/1st_web）
 
 ```bash
 cat > /etc/nginx/sites-available/xinliu << 'EOF'
 server {
     listen 80;
     server_name xinliu.glowith.top;
-    root /var/www/1st_web;
+    root /workspace/1st_web;
     index index.html;
 
     location / {
@@ -145,7 +145,7 @@ cd d:\workspace\psych-tools-site
 "C:\Program Files\Git\cmd\git.exe" push
 
 # 然后在服务器上拉取
-ssh root@139.196.82.191 "cd /var/www/1st_web && git pull"
+ssh root@139.196.82.191 "cd /workspace/1st_web && git pull"
 ```
 
 ---
@@ -159,7 +159,7 @@ A: 排查三步：
 3. 域名解析是否生效？`ping xinliu.glowith.top`
 
 **Q: 显示 403 Forbidden**
-A: `chmod -R 755 /var/www/1st_web`
+A: `chmod -R 755 /workspace/1st_web`
 
 **Q: 显示 502 Bad Gateway**
 A: `systemctl restart nginx`
