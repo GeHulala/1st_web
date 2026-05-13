@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心流工坊 · 心理工具与产品</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 背景装饰 -->
+    <div class="bg-decoration">
+        <div class="bg-circle c1"></div>
+        <div class="bg-circle c2"></div>
+        <div class="bg-circle c3"></div>
+        <div class="bg-circle c4"></div>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">◉</span>
+                <span class="logo-text">心流工坊</span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link active">首页</a></li>
+                <li><a href="#tools" class="nav-link">心理工具</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#blog" class="nav-link">心·专栏</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">✦ 心理科学 · 赋能成长</div>
+            <h1 class="hero-title">
+                关照内心深处<br>
+                <span class="hero-highlight">遇见更好的自己</span>
+            </h1>
+            <p class="hero-subtitle">
+                基于认知行为科学、正念与积极心理学，<br>
+                我们开发了一系列帮助您理解自我、调节情绪、提升心理韧性的工具与产品。
+            </p>
+            <div class="hero-actions">
+                <a href="#tools" class="btn btn-primary">
+                    探索工具
+                    <span class="btn-arrow">→</span>
+                </a>
+                <a href="#about" class="btn btn-outline">
+                    了解更多
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="12">0</span>
+                    <span class="stat-label">专业工具</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="3000">0</span>
+                    <span class="stat-label">+ 使用者</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span>
+                    <span class="stat-label">% 满意度</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-illustration">
+                <div class="ilus-circle outer">
+                    <div class="ilus-circle middle">
+                        <div class="ilus-circle inner">
+                            <span class="ilus-icon">🧠</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <span class="float-el e1">🌱</span>
+                    <span class="float-el e2">💡</span>
+                    <span class="float-el e3">🌈</span>
+                    <span class="float-el e4">✨</span>
+                    <span class="float-el e5">🫀</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 心理工具区域 -->
+    <section class="tools-section" id="tools">
+        <div class="section-header">
+            <span class="section-tag">✦ 工具集</span>
+            <h2 class="section-title">用科学的方式，<br>照顾你的内心世界</h2>
+            <p class="section-desc">
+                每一款工具都融合了心理学理论与实践经验，帮助你更深入地理解自己，<br>
+                在觉察中成长，在练习中改变。
+            </p>
+        </div>
+
+        <div class="tools-grid">
+            <!-- 工具卡片 1 -->
+            <div class="tool-card" data-delay="0">
+                <div class="card-icon-wrap">
+                    <span class="card-icon">🧘</span>
+                </div>
+                <h3 class="card-title">正念呼吸训练</h3>
+                <p class="card-desc">引导式正念呼吸练习，帮助你减轻焦虑、提升专注力、回归当下的平静。</p>
+                <div class="card-meta">
+                    <span class="card-tag">正念</span>
+                    <span class="card-tag">焦虑缓解</span>
+                    <span class="card-tag">专注力</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-version">v2.0</span>
+                    <span class="card-status available">✨ 已发布</span>
+                </div>
+            </div>
+
+            <!-- 工具卡片 2 -->
+            <div class="tool-card" data-delay="1">
+                <div class="card-icon-wrap">
+                    <span class="card-icon">📝</span>
+                </div>
+                <h3 class="card-title">认知重构日记</h3>
+                <p class="card-desc">基于CBT疗法，引导你识别并重构负面思维模式，建立更具适应性的认知框架。</p>
+                <div class="card-meta">
+                    <span class="card-tag">CBT</span>
+                    <span class="card-tag">认知重构</span>
+                    <span class="card-tag">日记</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-version">v1.5</span>
+                    <span class="card-status available">✨ 已发布</span>
+                </div>
+            </div>
+
+            <!-- 工具卡片 3 -->
+            <div class="tool-card" data-delay="2">
+                <div class="card-icon-wrap">
+                    <span class="card-icon">📊</span>
+                </div>
+                <h3 class="card-title">情绪追踪仪表盘</h3>
+                <p class="card-desc">可视化记录每日情绪波动，发现内在模式，建立对自我情绪更深层的觉察。</p>
+                <div class="card-meta">
+                    <span class="card-tag">情绪觉察</span>
+                    <span class="card-tag">数据分析</span>
+                    <span class="card-tag">可视化</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-version">v3.0</span>
+                    <span class="card-status beta">🧪 Beta</span>
+                </div>
+            </div>
+
+            <!-- 工具卡片 4 -->
+            <div class="tool-card" data-delay="3">
+                <div class="card-icon-wrap">
+                    <span class="card-icon">💬</span>
+                </div>
+                <h3 class="card-title">肯定语生成器</h3>
+                <p class="card-desc">基于自我肯定理论，生成个性化积极肯定语，重塑自我价值感与内在信念。</p>
+                <div class="card-meta">
+                    <span class="card-tag">自我肯定</span>
+                    <span class="card-tag">积极心理</span>
+                    <span class="card-tag">正念</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-version">v2.2</span>
+                    <span class="card-status available">✨ 已发布</span>
+                </div>
+            </div>
+
+            <!-- 工具卡片 5 -->
+            <div class="tool-card" data-delay="4">
+                <div class="card-icon-wrap">
+                    <span class="card-icon">🌙</span>
+                </div>
+                <h3 class="card-title">睡眠心理引导</h3>
+                <p class="card-desc">结合渐进性肌肉放松与引导想象，帮助你自然进入深度修复性睡眠。</p>
+                <div class="card-meta">
+                    <span class="card-tag">睡眠</span>
+                    <span class="card-tag">放松</span>
+                    <span class="card-tag">引导想象</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-version">v1.0</span>
+                    <span class="card-status coming">🚧 即将发布</span>
+                </div>
+            </div>
+
+            <!-- 工具卡片 6 -->
+            <div class="tool-card" data-delay="5">
+                <div class="card-icon-wrap">
+                    <span class="card-icon">🎯</span>
+                </div>
+                <h3 class="card-title">目标与价值澄清</h3>
+                <p class="card-desc">基于ACT疗法，帮助你澄清个人核心价值观，设定与之对齐的有意义目标。</p>
+                <div class="card-meta">
+                    <span class="card-tag">ACT</span>
+                    <span class="card-tag">价值观</span>
+                    <span class="card-tag">目标设定</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-version">v2.1</span>
+                    <span class="card-status available">✨ 已发布</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心理念 -->
+    <section class="philosophy-section">
+        <div class="philosophy-content">
+            <div class="phil-text">
+                <span class="section-tag">✦ 我们的理念</span>
+                <h2 class="section-title">每个人内心<br>都有自我疗愈的力量</h2>
+                <p class="section-desc">
+                    心理学的最终目的，不是消除所有痛苦，而是帮助我们与自己最深处的部分建立连接。
+                    我们相信，最好的心理工具不是替代你的思考，而是唤醒你内在的智慧。
+                </p>
+                <ul class="phil-list">
+                    <li>
+                        <span class="phil-bullet">◉</span>
+                        <span>以科学为根基，以温暖为表达</span>
+                    </li>
+                    <li>
+                        <span class="phil-bullet">◉</span>
+                        <span>尊重每个人的独特节奏与路径</span>
+                    </li>
+                    <li>
+                        <span class="phil-bullet">◉</span>
+                        <span>陪伴而非评判，赋能而非替代</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="phil-quote">
+                <blockquote>
+                    "在内心世界的探索中，<br>
+                    工具只是地图，<br>
+                    而你才是真正的旅行者。"
+                </blockquote>
+                <cite>—— 心流工坊</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于区域 -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <span class="section-tag">✦ 关于我们</span>
+            <h2 class="section-title">用心做心理学工具</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    心流工坊由一群热爱心理学的创作者、设计师和开发者组成。我们深信，
+                    好的心理工具应当像一位温暖的朋友——既有科学严谨的逻辑，又有充满同理心的温度。
+                </p>
+                <p>
+                    每一款工具的诞生，都经历了大量心理文献研究、真实用户访谈和反复迭代测试。
+                    我们追求的不是功能的数量，而是每一次使用中真正的觉察与改变。
+                </p>
+                <div class="about-values">
+                    <div class="value-item">
+                        <span class="value-icon">🔬</span>
+                        <span class="value-label">循证设计</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">🤝</span>
+                        <span class="value-label">共情体验</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">🌱</span>
+                        <span class="value-label">持续成长</span>
+                    </div>
+                    <div class="value-item">
+                        <span class="value-icon">🛡️</span>
+                        <span class="value-label">隐私优先</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-team">
+                <div class="team-member">
+                    <div class="member-avatar" style="background:#c7d2fe">🧠</div>
+                    <div class="member-info">
+                        <span class="member-name">陈曦</span>
+                        <span class="member-role">心理学顾问 · 临床心理硕士</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar" style="background:#fde68a">🎨</div>
+                    <div class="member-info">
+                        <span class="member-name">林一</span>
+                        <span class="member-role">设计 & 用户体验</span>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar" style="background:#bbf7d0">💻</div>
+                    <div class="member-info">
+                        <span class="member-name">周远</span>
+                        <span class="member-role">技术开发 · 全栈工程师</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专栏区域 -->
+    <section class="blog-section" id="blog">
+        <div class="section-header">
+            <span class="section-tag">✦ 心·专栏</span>
+            <h2 class="section-title">心理学视角下的<br>生活思考</h2>
+        </div>
+        <div class="blog-grid">
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #c7d2fe, #e0e7ff);">
+                    <span class="blog-emoji">🧘</span>
+                </div>
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-date">2026.04.28</span>
+                        <span class="blog-category">正念</span>
+                    </div>
+                    <h3 class="blog-title">在日常中练习正念：三个微小而有力的练习</h3>
+                    <p class="blog-excerpt">正念不仅仅存在于冥想垫上。心理学研究表明，融入日常的微型正念练习同样有效...</p>
+                    <a href="#" class="blog-link">阅读更多 →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #fde68a, #fef3c7);">
+                    <span class="blog-emoji">📖</span>
+                </div>
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-date">2026.04.15</span>
+                        <span class="blog-category">自我成长</span>
+                    </div>
+                    <h3 class="blog-title">认知重构：从"我不够好"到"我在成长"</h3>
+                    <p class="blog-excerpt">我们内心最深处的自我对话，塑造了我们对世界的体验。学习识别和改写限制性信念...</p>
+                    <a href="#" class="blog-link">阅读更多 →</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <div class="blog-image" style="background: linear-gradient(135deg, #bbf7d0, #dcfce7);">
+                    <span class="blog-emoji">💭</span>
+                </div>
+                <div class="blog-body">
+                    <div class="blog-meta">
+                        <span class="blog-date">2026.03.30</span>
+                        <span class="blog-category">情绪管理</span>
+                    </div>
+                    <h3 class="blog-title">情绪不是敌人：如何与你的感受建立新关系</h3>
+                    <p class="blog-excerpt">我们习惯于将情绪分为"好"与"坏"，但心理学告诉我们，每一种情绪都有其功能与智慧...</p>
+                    <a href="#" class="blog-link">阅读更多 →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- 联系区域 -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <div class="contact-text">
+                <span class="section-tag">✦ 保持连接</span>
+                <h2 class="section-title">我们期待<br>听到你的声音</h2>
+                <p class="section-desc">
+                    无论是对工具的使用反馈、心理学的交流探讨，<br>
+                    还是任何想要分享的故事，我们都在这里倾听。
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="ci-icon">📧</span>
+                        <span>hello@xinliu.works</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-icon">📱</span>
+                        <span>微信公众号 · 心流工坊</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="ci-icon">🌐</span>
+                        <span>参与内测 · 即刻体验</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="formName">你的称呼</label>
+                    <input type="text" id="formName" placeholder="如：小鹿" required>
+                </div>
+                <div class="form-group">
+                    <label for="formEmail">邮箱</label>
+                    <input type="email" id="formEmail" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="formMessage">你想说的话</label>
+                    <textarea id="formMessage" rows="4" placeholder="分享你的感受、建议或故事..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    发送
+                    <span class="btn-arrow">→</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="logo-icon">◉</span>
+                    <span class="logo-text">心流工坊</span>
+                    <p class="footer-desc">用温暖的科学，陪伴每一次内心探索。</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>工具</h4>
+                        <a href="#">正念呼吸</a>
+                        <a href="#">认知日记</a>
+                        <a href="#">情绪追踪</a>
+                        <a href="#">所有工具</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>关于</h4>
+                        <a href="#">我们的故事</a>
+                        <a href="#">科学顾问</a>
+                        <a href="#">隐私政策</a>
+                        <a href="#">加入我们</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>资源</h4>
+                        <a href="#">心理急救</a>
+                        <a href="#">推荐书单</a>
+                        <a href="#">常见问题</a>
+                        <a href="#">帮助中心</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <span>© 2026 心流工坊 · 以科学为伴，与内心为友</span>
+                <span class="footer-disclaimer">
+                    本平台工具不能替代专业心理咨询或治疗。
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部 -->
+    <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+        ↑
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>
