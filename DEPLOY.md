@@ -4,16 +4,52 @@
 
 ---
 
-## 第一步：登录服务器
+## 🔑 第一步：配置 SSH 免密码登录（仅首次需要）
 
-通过阿里云控制台登录：
+### 1️⃣ 用阿里云控制台登录服务器
+
 1. 打开 https://swas.console.aliyun.com/
-2. 找到你的轻量服务器 → 点「远程连接」
+2. 找到你的轻量服务器 → 点击「**远程连接**」
 3. 输入 root 密码登录
+
+### 2️⃣ 在服务器上执行以下命令（一次搞定）
+
+登录成功后，逐条复制执行：
+
+```bash
+# 创建 .ssh 目录
+mkdir -p ~/.ssh
+
+# 添加你的电脑公钥到服务器（复制整条执行）
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFM5VIo9MeUkfvnai2PFFZh5eceT6iLqDXrD0btPgAG2 ge21393951@gmail.com" >> ~/.ssh/authorized_keys
+
+# 设置正确权限
+chmod 600 ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+
+# 开启密钥登录
+sed -i 's/^#PubkeyAuthentication yes/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+sed -i 's/^PubkeyAuthentication no/PubkeyAuthentication yes/' /etc/ssh/sshd_config
+
+# 重启 SSH 服务
+systemctl restart sshd
+
+echo "✅ SSH 免密码配置完成！"
+```
+
+### 3️⃣ 验证免密码登录
+
+退出远程连接，然后回到你的电脑命令提示符，执行：
+
+```bash
+ssh root@139.196.82.191
+```
+
+如果能直接连接（不需要输入密码），说明配置成功了！🎉
 
 ---
 
-## 第二步：一条一条执行以下命令
+## 🚀 第二步：安装 Nginx 并部署网站
 
 ### 1. 更新系统并安装 Nginx
 
@@ -57,7 +93,7 @@ EOF
 ### 5. 启用站点并重启 Nginx
 
 ```bash
-# 先删掉默认站点（可选）
+# 先删掉默认站点
 rm -f /etc/nginx/sites-enabled/default
 
 # 启用心流工坊站点
@@ -70,64 +106,60 @@ nginx -t
 systemctl reload nginx
 ```
 
-### 6. 配置防火墙（放行 80 端口）
+### 6. 配置防火墙
 
 ```bash
 ufw allow 80
 ufw allow 'Nginx Full'
 ```
 
+> **注意**：还要在阿里云控制台放行端口
+> 阿里云控制台 → 轻量服务器 → 防火墙 → 添加规则 → 端口：80、443，协议：TCP
+
 ### 7. 测试网站
 
-在浏览器打开：**http://xinliu.glowith.top**
+浏览器打开：**http://xinliu.glowith.top**
 
-能看到页面就成功了！🎉
+能看到心流工坊页面就成功了！🎉
 
 ---
 
-## 第三步（强烈推荐）：配置 HTTPS 证书
+## 🔒 第三步：配置 HTTPS 证书（强烈推荐）
 
 ```bash
 apt install certbot python3-certbot-nginx -y
 certbot --nginx -d xinliu.glowith.top
 ```
 
-按提示输入邮箱 → 同意协议 → 选择是否重定向 HTTP 到 HTTPS（选 2）
+按提示：输入邮箱 → 同意协议 → 选择是否重定向（选 2，自动跳转 HTTPS）
 
 ---
 
-## 后续更新代码
-
-以后修改了网站代码，只需要：
+## 🔄 后续更新代码
 
 ```bash
-# 在你的电脑上推送更新
+# 在你的电脑上修改代码后
 cd d:\workspace\psych-tools-site
-git add .
-git commit -m "更新内容"
-git push
+"C:\Program Files\Git\cmd\git.exe" add .
+"C:\Program Files\Git\cmd\git.exe" commit -m "更新内容"
+"C:\Program Files\Git\cmd\git.exe" push
 
 # 然后在服务器上拉取
-cd /var/www/1st_web
-git pull
+ssh root@139.196.82.191 "cd /var/www/1st_web && git pull"
 ```
 
 ---
 
-## 常见问题
+## ⚠️ 常见问题
 
-**Q: 访问 http://xinliu.glowith.top 显示 502 Bad Gateway**
-A: 检查 Nginx 是否运行：`systemctl status nginx`
+**Q: http://xinliu.glowith.top 访问不了**
+A: 排查三步：
+1. 阿里云轻量服务器防火墙是否放行了 80 端口？
+2. `systemctl status nginx` 是否运行中？
+3. 域名解析是否生效？`ping xinliu.glowith.top`
 
 **Q: 显示 403 Forbidden**
-A: 检查目录权限：`chmod -R 755 /var/www/1st_web`
+A: `chmod -R 755 /var/www/1st_web`
 
-**Q: 域名无法访问**
-A: 确认阿里云轻量服务器的防火墙已放行 80 端口：
-   - 阿里云控制台 → 轻量服务器 → 防火墙 → 添加规则
-   - 端口：80、443，协议：TCP
-</write_to_file>
-<task_progress>
-- [x] 编写 DEPLOY.md 服务器部署文档
-</task_progress>
-</write_to_file>
+**Q: 显示 502 Bad Gateway**
+A: `systemctl restart nginx`
